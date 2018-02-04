@@ -48,6 +48,7 @@ export const pageQuery = graphql`
         description
         twitter
         instagram
+        medium
       }
     }
   }
