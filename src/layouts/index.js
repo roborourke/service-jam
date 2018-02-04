@@ -6,7 +6,7 @@ import { withPrefix } from 'gatsby-link'
 import styled, { ThemeProvider, injectGlobal } from 'styled-components'
 import theme from './theme';
 
-import { Body } from '../components/Type'
+import { Body } from '../components/Styled'
 import Header from '../components/Header'
 
 injectGlobal`

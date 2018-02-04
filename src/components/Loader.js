@@ -9,7 +9,7 @@ const LoaderBar = styled.div`
   padding: 3px;
   max-width: 200px;
   width: 80%;
-  margin: 10vh auto 10px auto;
+  margin: 5vh auto 10px auto;
 `
 
 const LoaderProgressAnim = keyframes`

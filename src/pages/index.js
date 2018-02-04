@@ -17,11 +17,11 @@ const SocialLinks = styled.ul`
   }
 `
 
-const IndexPage = ({ data }) => [
-  <Loader key="loader" />,
-  <H2 key="soon" align="center" large margins={{top: '20px', bottom: '10px'}}>Coming soon...</H2>,
-  <Container constrain="460px" align="center">{parse(data.intro.html)}</Container>,
-  <P key="follow" align="center" margins={{top: '20vh', bottom: '5px'}}>Follow us</P>,
+const IndexPage = ({ data }) => <Container constrain="460px" align="center">
+  <Loader key="loader" />
+  <H2 key="soon" align="center" large margins={{top: '20px', bottom: '20px'}}>Coming soon...</H2>
+  {parse(data.intro.html)}
+  <P key="follow" align="center" margins={{top: '15vh', bottom: '5px'}}>Follow us</P>
   <SocialLinks key="social">
     <li>
       <a href={data.site.siteMetadata.medium}>
@@ -39,7 +39,7 @@ const IndexPage = ({ data }) => [
       </a>
     </li>
   </SocialLinks>
-]
+</Container>
 
 export const pageQuery = graphql`
   query IndexQuery {

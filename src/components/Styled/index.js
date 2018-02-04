@@ -106,7 +106,7 @@ export const ButtonLink = Button.withComponent('a')
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding: ${props => props.pad || 0};
+  padding: ${props => props.pad || '1em 20px'};
   box-sizing: border-box;
   overflow: hidden;
   ${mixins}
