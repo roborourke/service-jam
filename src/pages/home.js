@@ -1,12 +1,22 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { withComponent } from 'styled-components'
+import { parse, H1, H2, H3, P, Container, ButtonLink } from '../components/Styled'
 
-const HomePage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-  </div>
+const Intro = Container.withComponent('section').extend`
+  p {
+    font-size: 130%;
+    line-height: 1.623;
+  }
+`
+
+const HomePage = ({ data }) => (
+  <Intro align="center">
+    <H1>{data.site.siteMetadata.title}</H1>
+    <Container constrain="600px">
+      {parse(data.intro.html)}
+      <ButtonLink>Find out more</ButtonLink>
+    </Container>
+  </Intro>
 )
 
 export const pageQuery = graphql`
@@ -15,22 +25,30 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        twitter
+        medium
+        instagram
       }
     }
-    allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            title
-            team {
-              name
-              bio
-              job
-            }
-          }
-          html
+    intro: markdownRemark(id: { regex: "/intro/" }) {
+      html
+    }
+    about: markdownRemark(id: { regex: "/about/" }) {
+      frontmatter {
+        title
+      }
+      html
+    }
+    team: markdownRemark(id: { regex: "/the-team/" }) {
+      frontmatter {
+        title
+        team {
+          name
+          bio
+          job
         }
       }
+      html
     }
     allMediumPost(sort: { fields: [createdAt], order: DESC }) {
       edges {

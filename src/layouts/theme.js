@@ -5,11 +5,11 @@ const theme = {
       black: 'Avenir LT W01_95 Black1475556',
     },
     sizes: {
-      body: { size: '16px', leading: '21px', weight: 'medium' },
-      h1: { size: '36px', leading: '58px', weight: 'black' },
-      h2: { size: '36px', leading: '27px', weight: 'black' },
-      h3: { size: '24px', leading: '27px', weight: 'medium' },
-      p: { size: '14px', leading: '21px', weight: 'medium' },
+      body: { size: '16px', leading: '1.3125', weight: 'medium' },
+      h1: { size: '36px', leading: '1.3125', weight: 'black' },
+      h2: { size: '36px', leading: '1.3125', weight: 'black' },
+      h3: { size: '24px', leading: '1.3125', weight: 'medium' },
+      p: { size: '16px', leading: '1.3125', weight: 'medium' },
     }
   },
   colours: {
