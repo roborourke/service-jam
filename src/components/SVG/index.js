@@ -13,7 +13,7 @@ export const Twitter = _Twitter
 const small = css`
   width: 20px;
   height: auto;
-  fill: ${props => props.theme.colours.white};
+  fill: ${props => ( props.colour && props.theme.colours[ props.colour ] ) || props.theme.colours.white};
 `
 
 export const SmallMedium = styled(Medium)`

@@ -8,6 +8,7 @@ import theme from './theme';
 
 import { Body } from '../components/Styled'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 injectGlobal`
   @font-face{
@@ -41,8 +42,9 @@ const TemplateWrapper = ({ children, data }) => <ThemeProvider theme={theme}>
         { name: 'keywords', content: 'service jam, liverpool' },
       ]}
     />
-    <Header title={data.site.siteMetadata.title} />
+    <Header {...data.site.siteMetadata} />
     {children()}
+    <Footer {...data.site.siteMetadata} />
   </Body>
 </ThemeProvider>
 
@@ -56,6 +58,10 @@ export const query = graphql`
       siteMetadata {
         title
         description
+        medium
+        email
+        twitter
+        instagram
       }
     }
   }

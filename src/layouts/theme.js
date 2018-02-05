@@ -8,7 +8,8 @@ const theme = {
       body: { size: '16px', leading: '1.3125', weight: 'medium' },
       h1: { size: '36px', leading: '1.3125', weight: 'black' },
       h2: { size: '36px', leading: '1.3125', weight: 'black' },
-      h3: { size: '24px', leading: '1.3125', weight: 'medium' },
+      h3: { size: '20px', leading: '1.3125', weight: 'medium' },
+      h4: { size: '16px', leading: '1.3125', weight: 'black' },
       p: { size: '16px', leading: '1.3125', weight: 'medium' },
     }
   },

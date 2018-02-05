@@ -5,6 +5,7 @@ module.exports = {
     twitter: 'https://twitter.com/lpoolservicejam',
     instagram: 'https://instagram.com/liverpoolservicejam/',
     medium: 'https://medium.com/liverpool-service-jam-2018',
+    email: 'liverpoolservicejam@gmail.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
