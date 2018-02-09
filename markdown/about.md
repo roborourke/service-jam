@@ -40,9 +40,9 @@ Tempest is a short walk from Liverpool rail stations, the closest one is Moorfie
 
 #### What hours will the jam be on during the weekend?
 
-The core hours of the jam will be:
-Friday 9 March 2018 from 6pm to 9pm
-Saturday 10 March 2018 from 9:30am to 5pm
+The core hours of the jam will be:\
+Friday 9 March 2018 from 6pm to 9pm\
+Saturday 10 March 2018 from 9:30am to 5pm\
 Sunday 11 March 2018 from 9:30am to 4pm
 
 #### What can I bring to the event?

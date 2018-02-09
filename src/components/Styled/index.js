@@ -48,9 +48,19 @@ export const Scheme = css`
   ${props => props.scheme && props.scheme === 'dark' && css`
     background: ${props.theme.colours.darkBlue};
     color: ${props.theme.colours.white};`}
-  ${props => props.scheme && props.scheme === 'green' && css`
+  ${props => props.scheme && props.scheme === 'paleGreen' && css`
     background: ${props.theme.colours.paleGreen};
     color: ${props.theme.colours.black};
+    h1, h2 {
+      color: ${props.theme.colours.darkBlue};
+    }
+    a {
+      color: ${props.theme.colours.darkBlue};
+    }
+    `}
+  ${props => props.scheme && props.scheme === 'green' && css`
+    background: ${props.theme.colours.green};
+    color: ${props.theme.colours.darkBlue};
     h1, h2 {
       color: ${props.theme.colours.darkBlue};
     }
@@ -72,7 +82,7 @@ export const Columns = css`
     & > * {
       flex: 1;
       width: ${100 / (props.columns === true ? 2 : props.columns)}%;
-      min-width: 300px;
+      min-width: 200px;
       margin-left: 10px;
       margin-right: 10px;
     }`}
@@ -160,6 +170,12 @@ export const Button = styled.button`
   cursor: pointer;
   border: 0;
   text-decoration: none;
+  svg {
+    fill: ${props => props.theme.colours.darkBlue};
+    vertical-align: sub;
+    width: 1em;
+    display: inline-block;
+  }
 `
 
 export const ButtonLink = Button.withComponent('a')
@@ -175,7 +191,6 @@ export const Container = styled.div`
   margin: 0 auto;
   ${props => props.pad && `padding: ${props.pad === true ? '1em 20px' : props.pad};`}
   box-sizing: border-box;
-  overflow: hidden;
   ${mixins}
   ${Scheme}
   ${Columns}

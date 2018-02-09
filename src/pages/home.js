@@ -3,6 +3,7 @@ import styled, { withComponent } from 'styled-components'
 import { parse, H1, H2, H3, P, Container, Link, Button, ButtonLink, Image } from '../components/Styled'
 import { SmallMedium } from '../components/SVG'
 import Location from '../components/Map'
+import Member from '../components/Team/Member'
 
 const Intro = Container.withComponent('section').extend`
   p {
@@ -12,8 +13,9 @@ const Intro = Container.withComponent('section').extend`
 `
 
 const About = Container.withComponent('section').extend`
+  overflow: hidden;
   &.hidden {
-    display: none;
+    height: 0;
   }
 `
 
@@ -34,7 +36,7 @@ const BlogPost = styled.article`
     color: ${props => props.theme.colours.white};
     text-decoration: none;
     margin: 0;
-    padding: .5em 20px;
+    padding: .75em 20px;
   }
 `
 
@@ -45,6 +47,23 @@ class HomePage extends React.Component {
     this.state = {
       showAbout: false
     }
+
+    this.handleAboutHash = this.handleAboutHash.bind(this)
+  }
+
+  componentWillMount() {
+    window.addEventListener( 'hashchange', this.handleAboutHash, false );
+    this.handleAboutHash();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener( 'hashchange', this.handleAboutHash );
+  }
+
+  handleAboutHash( event ) {
+    if ( window.location.hash === '#about' ) {
+      this.setState({ showAbout: true })
+    }
   }
 
   render() {
@@ -53,24 +72,24 @@ class HomePage extends React.Component {
     const Sections = [];
 
     // Intro
-    Sections.push( <Intro key="intro" scheme="dark">
+    Sections.push( <Intro key="intro" id="intro" scheme="dark">
       <Container align="center" constrain="600px" pad>
         <H1 margins={{top: '0px', bottom: '1em'}}>{data.site.siteMetadata.title}</H1>
         {parse(data.intro.html)}
         {this.state.showAbout
           ? null
-          : <Button onClick={() => this.setState({ showAbout: true })}>Find out more</Button>
+          : <ButtonLink href="#about">Find out more</ButtonLink>
         }
       </Container>
     </Intro> )
 
     // About
-    Sections.push( <About id="about" key="about" scheme="green" className={this.state.showAbout ? '' : 'hidden'}>
+    Sections.push( <About id="about" key="about" scheme="paleGreen" className={this.state.showAbout ? '' : 'hidden'}>
       <Container constrain="640px" pad>
         <H2>{data.about.frontmatter.title}</H2>
         {parse(data.about.html)}
         {this.state.showAbout
-          ? <Button onClick={() => this.setState({ showAbout: false })}>Close</Button>
+          ? <Button onClick={() => { window.location.hash = ''; this.setState({ showAbout: false }) }}>Close</Button>
           : null
         }
       </Container>
@@ -84,7 +103,7 @@ class HomePage extends React.Component {
           <H3>Liverpool Service Jam</H3>
           <P>9-11th March 2018</P>
           <P>Tempest Building, Liverpool</P>
-          <ButtonLink>Sign up</ButtonLink>
+          <ButtonLink href="https://www.eventbrite.co.uk/e/liverpool-service-jam-tickets-42722654610">Sign up</ButtonLink>
         </div>
         <div className="column">
           <Location coords={{ lat: 53.4084979, lng: -2.9915613 }} />
@@ -93,27 +112,36 @@ class HomePage extends React.Component {
     </Event> )
 
     // Blog
-    Sections.push( <Container id="blog" key="blog" scheme="green">
+    Sections.push( <Container id="blog" key="blog" scheme="paleGreen">
       <Container pad constrain>
         <H2 align="center">Our thoughts</H2>
       </Container>
       <Container constrain columns pad>
         {data.blog.edges.map( post => post.node ).map( post => <BlogPost key={post.id}>
           <Link href={`${data.site.siteMetadata.medium}/${post.uniqueSlug}`}>
-            {post.virtuals.previewImage.imageId && <Image src={`https://cdn-images-1.medium.com/max/1000/${post.virtuals.previewImage.imageId}`} />}
+            {post.virtuals.previewImage.imageId && <Image src={`https://cdn-images-1.medium.com/max/600/${post.virtuals.previewImage.imageId}`} />}
             <H3 className="title">{post.title}</H3>
           </Link>
         </BlogPost> )}
       </Container>
       <Container pad align="center">
         <ButtonLink href={data.site.siteMetadata.medium}>
-          See all posts on <SmallMedium title="Medium" colour="green" />
+          See all posts on <SmallMedium title="Medium" />
         </ButtonLink>
       </Container>
     </Container> )
 
     // Team
-
+    Sections.push( <Container id="the-team" key="the-team" scheme="green">
+      <Container pad constrain>
+        <H2 align="center">Meet the team</H2>
+      </Container>
+      <Container scheme="white" margins={{top: '150px'}}>
+        <Container constrain columns={4} pad style={{position: 'relative', top: '-130px'}}>
+          {data.team.frontmatter.team.map( member => <Member key={member.name} {...member} /> )}
+        </Container>
+      </Container>
+    </Container> )
 
     return Sections
   }
@@ -147,6 +175,20 @@ export const pageQuery = graphql`
           name
           bio
           job
+          image {
+            publicURL
+            resized: childImageSharp {
+              resize(width: 400, height: 400) {
+                src
+              }
+              sizes(maxWidth: 600) {
+                ...GatsbyImageSharpSizes_withWebp
+              }
+              resolutions(width: 400, height: 400) {
+                ...GatsbyImageSharpResolutions_withWebp
+              }
+            }
+          }
         }
       }
       html
