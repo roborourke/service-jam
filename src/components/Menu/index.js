@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Button } from '../Styled'
 import MenuIcon from './MenuIcon'
 import { rgba } from 'polished'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Nav = styled.nav`
   position: absolute;
@@ -16,12 +17,17 @@ const Nav = styled.nav`
   }
 `
 
+const openAbout = () => {
+  const button = document.querySelector('.open-about')
+  button && button.click()
+}
+
 const MenuLinks = props => <ul {...props}>
-  <li><a href="#">Home</a></li>
-  <li><a href="#about">About</a></li>
-  <li><a href="#event">Next event</a></li>
-  <li><a href="#blog">Our thoughts</a></li>
-  <li><a href="#the-team">Meet the team</a></li>
+  <li><AnchorLink href="#home">Home</AnchorLink></li>
+  <li><AnchorLink href="#about" onClick={openAbout}>About</AnchorLink></li>
+  <li><AnchorLink href="#event">Next event</AnchorLink></li>
+  <li><AnchorLink href="#blog">Our thoughts</AnchorLink></li>
+  <li><AnchorLink href="#the-team">Meet the team</AnchorLink></li>
 </ul>
 
 export const SimpleMenu = styled(MenuLinks)`

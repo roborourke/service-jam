@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { withPrefix } from 'gatsby-link'
+import CoverImage from '../../markdown/assets/cover-photo@2x.png'
 
 import styled, { ThemeProvider, injectGlobal } from 'styled-components'
 import theme from './theme';
@@ -30,6 +31,7 @@ injectGlobal`
   body {
     margin: 0;
     padding: 0;
+    overflow: visible;
   }
 `
 
@@ -40,6 +42,10 @@ const TemplateWrapper = ({ children, data }) => <ThemeProvider theme={theme}>
       meta={[
         { name: 'description', content: data.site.siteMetadata.description },
         { name: 'keywords', content: 'service jam, liverpool' },
+        { property: "og:title", content: data.site.siteMetadata.title },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "https://liverpoolservicejam.uk" },
+        { property: "og:image", content: CoverImage }
       ]}
     />
     <Header {...data.site.siteMetadata} />

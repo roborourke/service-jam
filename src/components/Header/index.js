@@ -17,7 +17,7 @@ const HeaderLogo = styled(JamLogo)`
 `
 
 const Header = ({ title }) => (
-  <HeaderContainer>
+  <HeaderContainer id="home">
     <Container pad>
       <HeaderLogo title={title} />
       <BurgerMenu />

@@ -14,7 +14,9 @@ team:
     image: ./assets/resized/isobel.jpg
     job: Designer at Creative Concern
     bio: |
-      I'm a designer at Creative Concern based in Manchester and been involved in service jams from Manchester to Sardinia! 
+      I'm a graphic designer at Creative Concern, an ethically driven communications agency based in Manchester.
+
+      I'm really interested in the ways that service design utilises design thinking and the power of collaboration as tools for innovation and social change. Previously I have been involved with a range of service design projects with Macmillan, Swarm and Imperial College Hospital Trust that all focused on improving patient care.
   -
     name: Nicola Wass
     image: ./assets/resized/nicola.jpg

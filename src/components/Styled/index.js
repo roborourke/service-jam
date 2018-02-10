@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import ReactHtmlParser from 'react-html-parser'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const transform = ( element, idx ) => {
   switch ( element.type ) {
@@ -179,6 +180,8 @@ export const Button = styled.button`
 `
 
 export const ButtonLink = Button.withComponent('a')
+
+export const ButtonAnchor = Button.withComponent(AnchorLink)
 
 export const Image = styled.img`
   max-width: 100%;

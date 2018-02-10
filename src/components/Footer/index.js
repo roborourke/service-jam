@@ -9,7 +9,9 @@ const FooterContainer = Container.withComponent('footer').extend`
   overflow: hidden;
   padding: 40px 0;
   .footer-menu ul {
-    float: right;
+    @media screen and (min-width: 600px) {
+      float: right;
+    }
     font-size: 120%;
     li {
       display: block;
