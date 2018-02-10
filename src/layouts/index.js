@@ -41,7 +41,7 @@ const TemplateWrapper = ({ children, data }) => <ThemeProvider theme={theme}>
       title={data.site.siteMetadata.title}
       meta={[
         { name: 'description', content: data.site.siteMetadata.description },
-        { name: 'keywords', content: 'service jam, liverpool' },
+        { name: 'keywords', content: 'service jam, liverpool, service design, hackathon' },
         { property: "og:title", content: data.site.siteMetadata.title },
         { property: "og:type", content: "website" },
         { property: "og:url", content: "https://liverpoolservicejam.uk" },

@@ -12,8 +12,8 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-transformer-remark',
     `gatsby-plugin-react-next`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `@jacobmischka/gatsby-plugin-react-svg`,
     {
       resolve: `gatsby-source-medium`,
