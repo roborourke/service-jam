@@ -1,11 +1,10 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "service-jam",
+  "description": "Liverpool Service Jam",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Robert O'Rourke <rob@o-rourke.org>",
   "dependencies": {
     "@jacobmischka/gatsby-plugin-react-svg": "^1.0.0",
-    "anchorate": "^1.1.0",
     "gatsby": "^1.9.158",
     "gatsby-image": "^1.0.35",
     "gatsby-link": "^1.6.34",
@@ -20,15 +19,13 @@
     "gatsby-transformer-remark": "^1.7.30",
     "gatsby-transformer-sharp": "^1.6.18",
     "polished": "^1.9.2",
-    "react-anchor-link-smooth-scroll": "^1.0.5",
+    "react-anchor-link-smooth-scroll": "roborourke/react-anchor-link-smooth-scroll",
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.0",
     "react-html-parser": "^2.0.2",
     "recompose": "^0.26.0",
     "remark": "^9.0.0",
     "remark-html": "^7.0.0",
-    "smooth-anchorate": "^1.2.1",
-    "smoothscroll-polyfill": "^0.4.0",
     "styled-components": "^3.0.2"
   },
   "keywords": [
@@ -41,14 +38,14 @@
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "serve ./public"
+    "deploy": "gatsby build && cd public && now && now alias"
   },
   "devDependencies": {
     "prettier": "^1.10.2"
   },
   "now": {
     "engines": {
-      "node": "^9.0.0"
+      "node": "^9.3.0"
     },
     "alias": [
       "liverpoolservicejam.uk",

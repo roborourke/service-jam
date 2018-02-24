@@ -10,7 +10,7 @@ const HeaderContainer = styled.header`
 `
 
 const HeaderLogo = styled(JamLogo)`
-  width: 140px;
+  width: 150px;
   height: auto;
   margin: 0 auto;
   display: block;

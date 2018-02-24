@@ -4,11 +4,9 @@ team:
   -
     name: Joe Bramall
     image: ./assets/resized/joe.png
-    job: User Experience Lead at Uniform
+    job: User Experience Designer
     bio: |
-      I'm UX lead at Uniform, mostly focusing on UX strategy, currently working with Unilever on a digital transformation project. I've been mixing UX strategy with service design and have seen some great results from it.
-
-      I have attended jams in the past and worked with Kathryn Grace in Manchester to help facilitate Manchester Jam days with Co-Op Digital. I can help bring tools to the jam and facilitation skills. I love helping people with processes and helping to spot opportunities from insights.
+      I’ve been working in UX for the last ten years but for the last five I’ve been developing Service Design skills. The best thing I ever did was attend the Leeds Service Jams, they opened my eyes to how my skills can be used to solve social problems. It also opened me up to a highly creative, fun and supportive network. I’m looking forward to growing the service design community in Liverpool and I’m very excited to be co-hosting the event with such a brilliant team.
   -
     name: Isobel Seacombe
     image: ./assets/resized/isobel.jpg

@@ -1,0 +1,10 @@
+{
+  "name": "liverpoolservicejam",
+  "engines": {
+    "node": "^9.3.0"
+  },
+  "alias": [
+    "liverpoolservicejam.uk",
+    "livsrvjam"
+  ]
+}

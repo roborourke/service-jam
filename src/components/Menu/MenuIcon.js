@@ -183,7 +183,10 @@ const Hamburger = styled.div`
   box-sizing: border-box;
 }
 
-transform: scale(${props => props.scale || 1});
+transform: scale(${props => (props.scale / 2) || .5});
+@media only screen and (min-width: 600px) {
+  transform: scale(${props => props.scale || 1});
+}
 margin: 40px auto;
 position: relative;
 display: block;

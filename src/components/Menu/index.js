@@ -67,7 +67,6 @@ class BurgerMenu extends React.Component {
       <MenuIcon
         open={this.state ? this.state.open : null}
         onClick={() => this.setState({ open: !this.state || !this.state.open })}
-        scale="2vw"
       />
       <MainMenu
         open={this.state && this.state.open}
