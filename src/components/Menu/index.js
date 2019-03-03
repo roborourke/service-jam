@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from '../Styled'
 import MenuIcon from './MenuIcon'
 import { rgba } from 'polished'
 import AnchorLink from 'react-anchor-link-smooth-scroll'

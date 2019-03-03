@@ -1,4 +1,3 @@
-import React from 'react'
 import styled, { css } from 'styled-components'
 import _JamLogo from './JamLogo.svg'
 import _Instagram from './Instagram.svg'

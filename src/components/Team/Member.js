@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { H3, P, parse } from '../Styled'
+import { H3, parse } from '../Styled'
 import remark from 'remark'
 import html from 'remark-html'
 import { lighten } from 'polished'

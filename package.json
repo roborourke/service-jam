@@ -4,29 +4,32 @@
   "version": "1.0.0",
   "author": "Robert O'Rourke <rob@o-rourke.org>",
   "dependencies": {
-    "@jacobmischka/gatsby-plugin-react-svg": "^1.0.0",
-    "gatsby": "^1.9.158",
-    "gatsby-image": "^1.0.35",
-    "gatsby-link": "^1.6.34",
-    "gatsby-plugin-favicon": "^2.1.1",
-    "gatsby-plugin-google-tagmanager": "^1.0.13",
-    "gatsby-plugin-react-helmet": "^2.0.4",
-    "gatsby-plugin-react-next": "^1.0.8",
-    "gatsby-plugin-sharp": "^1.6.27",
-    "gatsby-plugin-styled-components": "^2.0.5",
-    "gatsby-source-filesystem": "^1.5.15",
-    "gatsby-source-medium": "^1.0.11",
-    "gatsby-transformer-remark": "^1.7.30",
-    "gatsby-transformer-sharp": "^1.6.18",
-    "polished": "^1.9.2",
+    "@types/googlemaps": "^3.30.16",
+    "@types/markerclustererplus": "^2.1.33",
+    "gatsby": "^2.1.19",
+    "gatsby-image": "^2.0.30",
+    "gatsby-link": "^2.0.13",
+    "gatsby-plugin-favicon": "^3.1.5",
+    "gatsby-plugin-google-tagmanager": "^2.0.9",
+    "gatsby-plugin-react-helmet": "^3.0.7",
+    "gatsby-plugin-react-svg": "^2.0.0-beta1",
+    "gatsby-plugin-sharp": "^2.0.23",
+    "gatsby-plugin-styled-components": "^3.0.6",
+    "gatsby-source-filesystem": "^2.0.23",
+    "gatsby-source-medium": "^2.0.4",
+    "gatsby-transformer-remark": "^2.3.0",
+    "gatsby-transformer-sharp": "^2.1.15",
+    "polished": "^3.0.3",
+    "react": "^16.8.3",
     "react-anchor-link-smooth-scroll": "roborourke/react-anchor-link-smooth-scroll",
+    "react-dom": "^16.8.3",
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.0",
     "react-html-parser": "^2.0.2",
-    "recompose": "^0.26.0",
-    "remark": "^9.0.0",
-    "remark-html": "^7.0.0",
-    "styled-components": "^3.0.2"
+    "recompose": "^0.30.0",
+    "remark": "^10.0.1",
+    "remark-html": "^9.0.0",
+    "styled-components": "^4.1.3"
   },
   "keywords": [
     "gatsby"
@@ -41,7 +44,7 @@
     "deploy": "gatsby build && cd public && now && now alias"
   },
   "devDependencies": {
-    "prettier": "^1.10.2"
+    "prettier": "^1.16.4"
   },
   "now": {
     "engines": {

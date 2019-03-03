@@ -42,7 +42,7 @@ export const Margins = css`
 
 export const Constrain = css`
   ${props => props.constrain && css`
-    max-width: ${props.constrain === true ? '960px' : props.constrain};`}
+    max-width: ${props.constrain === true ? '1020px' : props.constrain};`}
 `
 
 export const Scheme = css`
@@ -81,9 +81,9 @@ export const Columns = css`
     ${props.pad && css`
       padding-left: 10px; padding-right: 10px;`}
     & > * {
-      flex: 1;
+      flex: 1 1 180px;
       width: ${100 / (props.columns === true ? 2 : props.columns)}%;
-      min-width: 200px;
+      min-width: 180px;
       margin-left: 10px;
       margin-right: 10px;
     }`}

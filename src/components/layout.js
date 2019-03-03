@@ -1,17 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { withPrefix } from 'gatsby-link'
 import CoverImage from '../../markdown/assets/cover-photo@2x.png'
 
-import styled, { ThemeProvider, injectGlobal } from 'styled-components'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from './theme';
 
 import { Body } from '../components/Styled'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   @font-face{
       font-family:"Avenir LT W01_65 Medium1475532";
       src:url(${withPrefix("/fonts/e0542193-b2e6-4273-bc45-39d4dfd3c15b.eot?#iefix")});
@@ -35,8 +34,9 @@ injectGlobal`
   }
 `
 
-const TemplateWrapper = ({ children, data }) => <ThemeProvider theme={theme}>
+const Layout = ({ children, data }) => <ThemeProvider theme={theme}>
   <Body>
+    <GlobalStyle />
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -49,28 +49,9 @@ const TemplateWrapper = ({ children, data }) => <ThemeProvider theme={theme}>
       ]}
     />
     <Header {...data.site.siteMetadata} />
-    {children()}
+    {children}
     <Footer {...data.site.siteMetadata} />
   </Body>
 </ThemeProvider>
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
-
-export const query = graphql`
-  query LayoutQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        medium
-        email
-        twitter
-        instagram
-      }
-    }
-  }
-`
-
-export default TemplateWrapper
+export default Layout

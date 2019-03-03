@@ -11,10 +11,9 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-transformer-remark',
-    `gatsby-plugin-react-next`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `@jacobmischka/gatsby-plugin-react-svg`,
+    `gatsby-plugin-react-svg`,
     {
       resolve: `gatsby-source-medium`,
       options: {
@@ -35,23 +34,22 @@ module.exports = {
         name: 'markdown-pages',
       }
     },
-    {
-      resolve: `gatsby-plugin-favicon`,
-      options: {
-        logo: "./src/components/SVG/JamLogo.svg",
-        injectHTML: true,
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          twitter: false,
-          yandex: false,
-          windows: false
-        }
-      }
-    }
+    // {
+    //   resolve: `gatsby-plugin-favicon`,
+    //   options: {
+    //     logo: "./src/components/SVG/JamLogo.svg",
+    //     icons: {
+    //       android: true,
+    //       appleIcon: true,
+    //       appleStartup: true,
+    //       coast: false,
+    //       favicons: true,
+    //       firefox: true,
+    //       twitter: false,
+    //       yandex: false,
+    //       windows: false
+    //     }
+    //   }
+    // }
   ],
 };
