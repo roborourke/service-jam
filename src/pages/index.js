@@ -83,11 +83,16 @@ class IndexPage extends React.Component {
           <H2 margins={{top: '0px'}}>Next event</H2>
           <H3>Liverpool Service Jam</H3>
           <P>9-11th March 2018</P>
-          <P>Tempest Building, Liverpool</P>
-          <ButtonLink href="https://www.eventbrite.co.uk/e/liverpool-service-jam-tickets-42722654610">Sign up</ButtonLink>
+          <P>Findout Research Lab at DoES Liverpool<br />
+            The Tapestry<br />
+            68 - 76 Kempston St<br />
+            Liverpool<br />
+            L3 8HL<br />
+          </P>
+          <ButtonLink href="#" onClick={e => e.preventDefault()}>Tickets coming soon</ButtonLink>
         </div>
         <div className="column">
-          <Location coords={{ lat: 53.4085753, lng: -2.9909815 }} />
+          <Location coords={{ lat: 53.4105372, lng: -2.9725723 }} />
         </div>
       </Container>
     </Event> )
